@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://yad:university-hats@localhost:5432/legalify"
+}
+
+
+
+
+model User {
+
+  id   Int                   @id @default(autoincrement())
+
+  username String @unique
+  password String
+  email  String @unique
+
+
+  // data Unsupported("circle")
+
+}
+
+model Product{
+  id Int @id @default(autoincrement())
+  title  String 
+  desc  String
+  img String
+  price Float
+
+}
